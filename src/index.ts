@@ -29,7 +29,7 @@ const write = process.stdout.write.bind(process.stdout);
 
     program
         .command('clone <repo>')
-        .action((options: { clone: URL }) => {
+        .action((options: { clone: UR }) => {
             echo('cloning', options.clone)
         });
 
