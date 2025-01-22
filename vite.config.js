@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-// const { defineConfig } = require('vite')
 
 export default defineConfig({
     root: './',
@@ -7,6 +6,7 @@ export default defineConfig({
     build: {
         minify: false,
         outDir: 'dist',
+        target: 'node',
         sourcemap: true,
         emptyOutDir: false,
         rollupOptions: {
@@ -15,10 +15,10 @@ export default defineConfig({
             },
 
             output: {
-                entryFileNames: 'index.js',
-                chunkFileNames: 'js/[name].js',
+                entryFileNames: 'cli.js',
+                chunkFileNames: 'lib/[name].js',
                 assetFileNames: '[name]-[hash][ext]'
             },
         },
-    }
+    },
 });

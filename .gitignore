@@ -1,3 +1,8 @@
 /node_modules/**/*
 /.history/
 /.vscode/
+/test/
+/dist/
+/out/
+
+vite.config.js

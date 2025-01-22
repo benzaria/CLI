@@ -2,35 +2,38 @@
   "name": "cli",
   "version": "1.0.0",
   "description": "cli tool",
-  "main": "src/index.ts",
-  "bin": "./out/index.js",
+  "main": "./src/index.ts",
+  "bin": "./dist/index.js",
+  "types": "./types.d.ts",
   "type": "module",
   "scripts": {
     "start": "tsx src/index.ts",
-    "start:dist": "node dist/index.js",
+    "start:out": "node out/index.js",
+    "start:dist": "node dist/index.cjs",
+    "test": "tsc --noEmit",
     "compile": "tsc",
-    "build": "vite build",
+    "build": "node esbuild.js",
+    "build:tsup": "tsup",
+    "build:vite": "vite build",
     "build:win": "build.bat",
     "build:unix": "build.sh || runBash build.sh",
-    "pack": "pkg ."
-  },
-  "pkg": {
-    "scripts": [
-      "out/**/*.js"
-    ],
-    "targets": [
-      "node16-win-x64"
-    ]
+    "pack": "pkg .",
+    "roll": "pkgroll"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@inquirer/prompts": "^7.2.3",
+    "ansi-escapes": "^7.0.0",
+    "chalk": "^5.4.1",
     "commander": "^13.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
+    "esbuild": "^0.24.2",
     "pkg": "^5.8.1",
+    "pkgroll": "^2.6.1",
+    "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vite": "^6.0.9"
