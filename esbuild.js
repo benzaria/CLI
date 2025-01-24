@@ -1,6 +1,23 @@
 import * as esbuild from 'esbuild';
 
-// esbuild.formatMessages('errors-only', { color: true, kind: 'error' })
+// let formatted = await esbuild.formatMessages([
+//     {
+//         text: 'This is an error',
+//         location: {
+//             file: 'app.js',
+//             line: 10,
+//             column: 4,
+//             length: 3,
+//             lineText: 'let foo = bar',
+//         },
+//     },
+// ], {
+//     kind: 'error',
+//     color: false,
+//     terminalWidth: 100,
+// })
+
+// console.log(formatted.join('\n'))
 
 esbuild.build({
     entryPoints: ['src/index.ts'], // Your entry file(s)

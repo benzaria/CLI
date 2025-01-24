@@ -1,4 +1,7 @@
-export declare module 'chalk' {
+import chalk from "chalk";
+export default chalk;
+
+declare module 'chalk' {
     interface ChalkInstance {
         /**
          * Moves the cursor up by the specified number of lines.

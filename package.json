@@ -14,22 +14,29 @@
     "lint": "eslint . --ext .ts",
     "compile": "tsc",
     "build": "node esbuild.js",
-    "build:tsup": "tsup",
+    "build:types": "tsup --dts --dts-resolve --dts-only",
     "build:vite": "vite build",
     "build:win": "build.bat",
     "build:unix": "build.sh || runBash build.sh",
+    "tsup": "tsup",
     "pack": "pkg .",
     "roll": "pkgroll"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@gar/promisify": "^1.1.3",
     "@inquirer/prompts": "^7.2.3",
+    "@types/ms": "^2.1.0",
     "ansi-escapes": "^7.0.0",
     "chalk": "^5.4.1",
-    "commander": "^13.0.0"
+    "commander": "^13.0.0",
+    "dialog-node": "^0.2.1",
+    "ms": "^2.1.3",
+    "pify": "^6.1.0"
   },
   "devDependencies": {
+    "@types/dialog-node": "^0.2.3",
     "@types/node": "^22.10.7",
     "esbuild": "^0.24.2",
     "pkg": "^5.8.1",

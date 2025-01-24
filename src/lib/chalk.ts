@@ -1,11 +1,13 @@
-import { Chalk } from "chalk";
+import { Chalk, ChalkInstance } from "chalk";
 import * as ansi from "ansi-escapes";
-import './chalk.d'
+
+import { echo, write } from "../index";
+
+import '../../types/lib/chalk.d'
 
 const { stdin, stdout } = process;
 
 const chalk = new Chalk();
-const write = stdout.write.bind(process.stdout);
 
 chalk.upline = function (line = 1, replace = '') {
     write(ansi.cursorUp(line) + replace);
